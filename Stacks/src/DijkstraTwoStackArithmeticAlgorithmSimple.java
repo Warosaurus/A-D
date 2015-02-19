@@ -3,7 +3,7 @@
  *
  * This is a simple implementation of Dijkstra's Two-Stack Arithmetic Algorithm.
  * (Not covered in the course, created for fun and profit?)
- * 
+ *
  * Algorithm:
  * - value: push onto value stack.
  * - operator: push onto operator stack.
@@ -33,14 +33,15 @@ public class DijkstraTwoStackArithmeticAlgorithmSimple {
 	private GenericResizingStackArray<Character> operators;
 	private char[] c;
 
-	public DijkstraTwoStackArithmeticAlgorithmSimple(String sequence) {
+	public DijkstraTwoStackArithmeticAlgorithmSimple() {
 		values = new GenericResizingStackArray<Integer>();
 		operators = new GenericResizingStackArray<Character>();
 		// *Need to add validate the string
-		c = sequence.toCharArray();
+//		c = sequence.toCharArray();
 	}
 
-	private int evaluate() {
+	public int evaluate(String expression) {
+		c = expression.toCharArray();
 		int i = 0;
 		while(i < c.length) {
 			if (c[i] == ')')
@@ -48,8 +49,8 @@ public class DijkstraTwoStackArithmeticAlgorithmSimple {
 			else if ((int) c[i] >= 42 && (int) c[i] <= 45)
 				operators.push(c[i]);
 			else if (Character.isDigit(c[i])) {
-				String x = "";
-				while(Character.isDigit(c[i]))
+				String x = "" + c[i];
+				while(Character.isDigit(c[i+1]))
 					x += c[i++];
 				values.push(Integer.parseInt(x));
 			}
