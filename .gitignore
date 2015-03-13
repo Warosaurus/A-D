@@ -1,8 +1,15 @@
 # Files
 *.iml
+<<<<<<< HEAD
+=======
 *.txt
+>>>>>>> master
 
 # Directories
 .idea/
 out/
 temp/
+<<<<<<< HEAD
+Snipps/resources/
+=======
+>>>>>>> master
