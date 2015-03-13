@@ -1,2 +1,8 @@
-.idea
-.iml
+# Files
+*.iml
+
+# Directories
+.idea/
+out/
+temp/
+Snipps/resources/
